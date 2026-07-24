@@ -37,14 +37,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: polymathrobotics/validate_dbc@v1
+      - uses: polymathrobotics/validate_dbc@v0.1
         # No inputs needed: validates every .dbc in the repo by default.
 ```
 
 Validate only a single directory:
 
 ```yaml
-      - uses: polymathrobotics/validate_dbc@v1
+      - uses: polymathrobotics/validate_dbc@v0.1
         with:
           path: dbc_dir
 ```
@@ -52,7 +52,7 @@ Validate only a single directory:
 Validate an explicit set of files:
 
 ```yaml
-      - uses: polymathrobotics/validate_dbc@v1
+      - uses: polymathrobotics/validate_dbc@v0.1
         with:
           files: |
             path/to/example.dbc
@@ -69,7 +69,7 @@ Validate an explicit set of files:
 
 ## Versioning
 
-Pin to a major version tag (`@v1`) to receive compatible updates, or to a full
+Pin to a version tag (`@v0.1`) to receive compatible updates, or to a full
 commit SHA for maximum reproducibility.
 
 ## License
