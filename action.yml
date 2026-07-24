@@ -1,5 +1,5 @@
 name: 'Validate DBC'
-description: 'Lint CAN .dbc files for syntax and structural defects with cantools.'
+description: 'Github Action for validating .dbc files using cantools.'
 author: 'Polymath Robotics'
 
 branding:
