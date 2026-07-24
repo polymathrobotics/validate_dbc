@@ -1,0 +1,15 @@
+VERSION ""
+
+
+NS_ :
+
+BS_:
+
+BU_:
+
+
+BO_ 500 Message_A: 8 Vector__XXX
+ SG_ Signal_A : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 500 Message_B: 8 Vector__XXX
+ SG_ Signal_B : 0|8@1+ (1,0) [0|255] "" Vector__XXX

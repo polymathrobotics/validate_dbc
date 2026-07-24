@@ -1,0 +1,16 @@
+VERSION ""
+
+
+NS_ :
+
+BS_:
+
+BU_:
+
+
+BO_ 700 Fd_Message: 9 Vector__XXX
+ SG_ Fd_Signal : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_ "VFrameFormat" BO_ 700 14;

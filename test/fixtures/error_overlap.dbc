@@ -1,0 +1,13 @@
+VERSION ""
+
+
+NS_ :
+
+BS_:
+
+BU_:
+
+
+BO_ 200 Overlap_Message: 8 Vector__XXX
+ SG_ Signal_X : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Signal_Y : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
