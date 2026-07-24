@@ -1,0 +1,57 @@
+name: 'Validate DBC'
+description: 'Lint CAN .dbc files for syntax and structural defects with cantools.'
+author: 'Polymath Robotics'
+
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
+inputs:
+  path:
+    description: 'Directory to search recursively for .dbc files (used when `files` is empty).'
+    required: false
+    default: '.'
+  files:
+    description: 'Explicit space- or newline-separated list of .dbc files. Overrides `path` when set.'
+    required: false
+    default: ''
+  python-version:
+    description: 'Python version used to run the validator.'
+    required: false
+    default: '3.10'
+  cantools-version:
+    description: 'pip version specifier appended to "cantools" (e.g. ">=40,<41").'
+    required: false
+    default: '>=40,<41'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Install cantools
+      shell: bash
+      env:
+        CANTOOLS_VERSION: ${{ inputs.cantools-version }}
+      run: python -m pip install --upgrade "cantools${CANTOOLS_VERSION}"
+
+    - name: Validate DBC files
+      shell: bash
+      env:
+        INPUT_FILES: ${{ inputs.files }}
+        INPUT_PATH: ${{ inputs.path }}
+        ACTION_PATH: ${{ github.action_path }}
+      run: |
+        if [ -n "$INPUT_FILES" ]; then
+          read -r -a files <<< "$INPUT_FILES"
+        else
+          mapfile -t files < <(find "$INPUT_PATH" -type f -name '*.dbc' | sort)
+        fi
+        if [ "${#files[@]}" -eq 0 ]; then
+          echo "No .dbc files found."
+          exit 0
+        fi
+        python "$ACTION_PATH/scripts/validate_dbc.py" "${files[@]}"

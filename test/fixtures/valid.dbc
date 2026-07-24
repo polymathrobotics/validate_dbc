@@ -1,0 +1,13 @@
+VERSION ""
+
+
+NS_ :
+
+BS_:
+
+BU_:
+
+
+BO_ 2364540158 Example_Message: 8 Vector__XXX
+ SG_ Example_Signal_A : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Example_Signal_B : 8|16@1+ (0.1,0) [0|6553.5] "rpm" Vector__XXX

@@ -1,0 +1,12 @@
+VERSION ""
+
+
+NS_ :
+
+BS_:
+
+BU_:
+
+
+BO_ 300 Oversize_Message: 16 Vector__XXX
+ SG_ Signal_Z : 0|8@1+ (1,0) [0|255] "" Vector__XXX
